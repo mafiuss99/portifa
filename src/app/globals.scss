@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 // Base
-@import "assets/scss/base/types";
+//@import "assets/scss/base/types";
 @import "assets/scss/base/animations";
 @import "assets/scss/base/helpers";
 @import "assets/scss/base/container";
@@ -34,7 +34,7 @@
   --black-80: #000000cc;
   --black-90: #000000e5;
   --black-100: #000000;
-  --black-rgb: 0,0,0;
+  --black-rgb: 0, 0, 0;
 
   --white-5: #ffffff0d;
   --white-10: #ffffff1a;
@@ -137,7 +137,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-color: var(--primary) var(--gray-900);
   scrollbar-width: thin;
-  font-family: "Roboto Flex", serif;
+  @apply font-sans;
 
   @media (max-width: 3740px) {
     font-size: 18px;
@@ -164,9 +164,14 @@ html {
   }
 
   body {
-    font-family: "Roboto Flex", serif;
     overflow-x: hidden;
+    @apply font-sans;
   }
+}
+
+/* Lenis controla o scroll suave; `scroll-behavior: smooth` no html conflita. */
+html.lenis {
+  scroll-behavior: auto !important;
 }
 
 main {
